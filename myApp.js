@@ -13,7 +13,10 @@
 // as MONGO_URI. Connect to the database using the following syntax:
 //
 // mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
+const mongoose = require('mongoose');
+require('dotenv/config');
 
+mongoose.connect(process.env.MONGO_DB_URI, {useNewUrlParser: true, useUnifiedTopology: true}, () => console.log('connected to db'));
 
 
 /** # SCHEMAS and MODELS #
